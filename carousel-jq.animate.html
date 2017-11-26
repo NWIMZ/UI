@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrap li {
+            width: 470px;
+            height: 150px;
+            float: left;
+        }
+
+        .wrap {
+            height: 150px;
+            width: 2820px;
+            position: absolute;
+        }
+
+        .container {
+            width: 470px;
+            height: 150px;
+            overflow: hidden;
+            position: relative;
+            margin: 100px auto;
+        }
+
+        .left,
+        .right {
+            background: rgba(0, 0, 0, 0.2);
+            position: absolute;
+            top: 35px;
+            height: 80px;
+            width: 40px;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 30px;
+            line-height: 80px;
+            text-align: center;
+        }
+
+        .left {
+            right: 0;
+            display: none;
+        }
+
+        .right {
+            left: 0;
+            display: none;
+        }
+
+        .index li {
+            list-style: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.8);
+            margin: 5px;
+            float: left;
+        }
+
+        .index {
+            position: absolute;
+            bottom: 0;
+            left: 160px;
+        }
+
+        .index .active {
+            background: rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <ul class="wrap">
+           <li>1</li>
+           <li>2</li>
+           <li>3</li>
+           <li>4</li>
+           <li>5</li> 
+        </ul>
+
+        <div class="left">&gt;</div>
+        <div class="right">&lt;</div>
+        <ul class="index">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+
+    var iNow = 0;
+    //左右箭头
+    $(".left").on("click", function () {
+        if (iNow == 5) {
+            iNow = 0;
+            $(".wrap").css("left", "0px");
+        }
+        iNow++;
+        $(".wrap").animate({
+            left: -470 * (iNow)
+        });
+        point(iNow);
+        console.log(iNow);
+    });
+
+    $(".right").on("click", function () {
+        if (iNow == 0) {
+            iNow = 5;
+            $(".wrap").css("left", "-2350px");
+        }
+        iNow--;
+        $(".wrap").animate({
+            left: -470 * iNow
+        });
+        console.log(iNow);
+        point(iNow);
+    });
+
+    //点击圆点
+    $(".index li").on("click", function () {
+        iNow = $(this).index();
+        $(".wrap").animate({
+            left: -470 * iNow
+        });
+        point(iNow);
+    })
+
+    function point(iNow) {
+        i = iNow + 1;
+        if (i == 6) {
+            i = 1;
+        }
+        $(".index li:nth-of-type(" + i + ")").addClass("active").siblings().removeClass("active");
+    }
+
+    //鼠标移入移出图片
+    var timer = null;
+    timer = setInterval(function () {
+        
+        $(".left").trigger("click");
+    }, 2000);
+
+    $(".container").on("mouseover", function () {
+        clearInterval(timer);
+        $(".left").show();
+        $(".right").show();
+    });
+
+    $(".container").on("mouseout", function () {
+        timer = setInterval(function () {
+            $(".left").trigger("click");
+        }, 2000);
+        $(".left").hide();
+        $(".right").hide();
+    });
+</script>
+
+</html>
