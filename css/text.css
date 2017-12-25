@@ -1,0 +1,2 @@
+input[type=text]{height:30px;border-radius:2px;border:solid 1px #a0a0a0;padding-left:13px}input[type=text]::-webkit-input-placeholder{color:#757575}input[type=text]:-moz-placeholder,input[type=text]::-moz-placeholder,input[type=text]:-ms-input-placeholder{color:#757575}input[type=text]:hover,input[type=text]:focus{box-shadow:0px 0px 4px 0px rgba(94,96,102,0.54)}input[type=text]:hover,input[type=text]:focus{outline:none;background-color:#f6f8fa}input[type=text]:disabled{box-shadow:unset;background-color:rgba(136,136,136,0.09)}
+/*# sourceMappingURL=text.css.map */

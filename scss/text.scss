@@ -1,0 +1,23 @@
+input[type=text] {
+  height: 30px;
+  border-radius: 2px;
+  border: solid 1px #a0a0a0;
+  padding-left: 13px;
+  &::-webkit-input-placeholder {
+    color: #757575;
+  }
+  &:-moz-placeholder, &::-moz-placeholder, &:-ms-input-placeholder {
+    color: #757575;
+  }
+  &:hover, &:focus {
+    box-shadow: 0px 0px 4px 0px rgba(94, 96, 102, 0.54);
+  }
+  &:hover, &:focus {
+    outline: none;
+    background-color: #f6f8fa;
+  }
+  &:disabled {
+    box-shadow: unset;
+    background-color: rgba(136, 136, 136, 0.09);
+  }
+}
