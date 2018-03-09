@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>圣杯布局</title>
+    <style>
+        .wrap{
+            padding-left: 100px;
+            padding-right: 200px;
+        }
+        .wrap:after{
+            display: block;
+            content: "";
+            clear: both;
+        }
+
+        .left,.right,.center{
+            box-sizing: border-box;
+            height: 100px;
+            float: left;
+            border: 1px solid black;
+        }
+        .center{
+            width: 100%;
+        }
+        .left{
+            margin-left: -100%;
+            width: 100px;
+            position: relative;
+            left: -100px;;
+        }
+        .right{
+            margin-left: -200px;
+            width: 200px;
+            position: relative;
+            right: -200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="center" style="background: red;"></div>
+        <div class="left">left</div>
+        <div class="right">right</div>
+    </div>
+
+    <ol>
+        <li>三者都设置向左浮动。</li>
+        <li>设置main宽度为100%。</li>
+        <li>设置 负边距，sub设置负左边距为100%，extra设置负左边距为负的自身宽度。</li>
+        <li>设置bd的padding值给左右两个子面板留出空间。</li>
+        <li>设置两个子面板为相对定位，sub的left值为负的sub宽度，extra的right值为负的extra宽度。</li>
+    </ol>
+</body>
+</html>

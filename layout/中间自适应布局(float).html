@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>中间自适应布局(float)</title>
+    <style>
+        .left,.center,.right{
+            height: 100px;
+            border: 1px solid black;
+        }
+        .left{
+            float: left;
+            width: 100px;
+        }
+        .center{
+            margin-left: 100px;
+            margin-right: 200px;
+        }
+        .right{
+            width: 200px;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="left">left</div>
+        <div class="right">right</div>
+        <div class="center">
+            <div style="background: red;height: 100%;">
+                 center
+            </div>
+        </div>
+    </div>
+</body>
+</html>

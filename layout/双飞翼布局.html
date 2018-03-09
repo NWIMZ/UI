@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>双飞翼布局</title>
+    <style>
+        .left,.right,.center{
+            float: left;
+        }
+        .left,.right,#main{
+            height: 100px;
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+        .center{
+            width: 100%;
+        }
+        .left{
+            width: 100px;
+            margin-left: -100%;
+        }
+        .right{
+            width: 200px;
+            margin-left: -200px;
+        }
+        #main{
+            border: 1px solid black;
+            margin-left: 100px;
+            margin-right: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <div id="main" style="background: red;">#main</div>
+    </div>
+    <div class="left">left</div>
+    <div class="right">right</div>
+
+    <ol>
+        <li>三者都设置向左浮动。</li>
+        <li>设置main宽度为100%。</li>
+        <li>设置 负边距，sub设置负左边距为100%，extra设置负左边距为负的自身宽度。</li>
+        <li>设置main-content的margin值给左右两个子面板留出空间。</li>
+    </ol>
+</body>
+</html>
