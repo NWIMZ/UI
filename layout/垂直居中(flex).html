@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>垂直居中(flex)</title>
+    <style>
+        html,body{
+            height: 100%;
+        }
+        .parent{
+            border: 1px solid black;
+            height: 50%;
+        }
+        .child{
+            background: red;
+            width: 100%;
+            height: 100px;
+        }
+
+        .parent{
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child">
+            设置父元素display: flex;align-items：center;即可
+        </div>
+    </div>
+</body>
+</html>
