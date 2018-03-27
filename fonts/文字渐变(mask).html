@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>文字渐变(mask)</title>
+    <style>
+        .text-gradient{
+            display: inline-block;
+            position: relative;
+        }
+        .text-gradient[data-text]::after{
+            content: attr(data-text);
+            color: green;
+            position: absolute;
+            left: 0;
+            z-index: 2;
+            -webkit-mask-image: -webkit-gradient(linear,0 0,0 bottom, from(#ff0000) ,to(rgba(0,0,255,0)))
+        }
+    </style>
+</head>
+<body>
+    <p class="text-gradient" data-text="Gradient">Gradient</p>
+</body>
+</html>
