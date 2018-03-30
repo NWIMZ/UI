@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>左边固定右边自适应布局(BFC)</title>
+    <style>
+        html,body,.wrap{
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .left,.right{
+            height: 100%;
+        }
+
+        .left{
+            width: 100px;
+            float: left;
+        }
+        .right{
+            /* overflow:hidden触发BFC */
+            overflow: hidden;
+        }
+
+
+        .left{
+            background: black;
+        }
+        .right{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="left"></div>
+        <div class="right">BFC 可以阻止元素被浮动元素覆盖</div>
+    </div>
+</body>
+</html>
