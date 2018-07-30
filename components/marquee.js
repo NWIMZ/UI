@@ -1,3 +1,4 @@
+
 /**
  * 文字横向滚动
  * @param {HTMLElement} oWrap 目标元素 
@@ -11,7 +12,7 @@ function creatLED(oWrap,textList,{speed=50,space=6}={}){
     var oBegin = document.createElement('div');
     oBegin.innerHTML = textList.reduce((prev,cuur) => {
         return `${prev}<span style="padding-right: ${space}em;">${cuur}</span>`;
-    });
+    },'');
     oBegin.style.display = 'inline';
     var oEnd = oBegin.cloneNode(true);
     oWrap.appendChild(oBegin);
